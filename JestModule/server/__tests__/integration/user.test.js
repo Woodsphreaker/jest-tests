@@ -31,7 +31,7 @@ describe('User', () => {
       .send({
         name: 'Carlo Enrico',
         email: 'carlo@uol.com.br',
-        password_hash: 'jhdjahdkadyewyq',
+        password: '123456',
       });
     expect(response.body).toHaveProperty('id');
   });
@@ -42,7 +42,7 @@ describe('User', () => {
       .send({
         name: 'Carlo Enrico',
         email: 'carlo@uol.com.br',
-        password_hash: 'jhdjahdkadyewyq',
+        password: '123456',
       });
 
     const response = await request(app)
@@ -50,7 +50,7 @@ describe('User', () => {
       .send({
         name: 'Carlo Enrico',
         email: 'carlo@uol.com.br',
-        password_hash: 'jhdjahdkadyewyq',
+        password: '123456',
       });
 
     expect(response.status).toBe(400);

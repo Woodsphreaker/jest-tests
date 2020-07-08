@@ -1,7 +1,7 @@
 import UserModel from '../models/Users';
 
 const store = async (req, res) => {
-  const { name, email, password_hash } = req.body;
+  const { name, email, password } = req.body;
 
   const hasEmailInDatabase = await UserModel.findOne({ where: { email } });
 
@@ -9,7 +9,7 @@ const store = async (req, res) => {
     return res.status(400).json({ message: 'email already in database' });
   }
 
-  const user = await UserModel.create({ name, email, password_hash });
+  const user = await UserModel.create({ name, email, password });
   return res.json(user);
 };
 
