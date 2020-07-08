@@ -1,5 +1,4 @@
 import Sequelize from 'sequelize';
-
 import databaseConfig from '../config/database';
 import UserModel from '../app/models/Users';
 
